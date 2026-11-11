@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Cidade Perdida</title>
+
+    <style>
+        body {
+            background-color: #dcebd8;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 30px;
+        }
+
+        main {
+            background: white;
+            max-width: 750px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            color: #27643c;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 1.6;
+        }
+
+        .passo {
+            display: none;
+        }
+
+        .ativo {
+            display: block;
+        }
+
+        button {
+            background-color: #287a46;
+            color: white;
+            padding: 15px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #174d2b;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<main>
+
+    <h1>🌳 A Cidade Perdida 🌳</h1>
+
+    <section class="passo ativo" id="passo-0">
+        <p>
+            Um dia desses, dentro de um livro da biblioteca
+            da escola, descobri uma carta antiga sobre uma
+            cidade perdida, escondida por riquezas e belezas
+            naturais. Decidi seguir as pistas!
+        </p>
+
+        <button onclick="proximoPasso('passo-1')">
+            Rio de Janeiro
+        </button>
+
+        <button onclick="proximoPasso('passo-2')">
+            Pernambuco
+        </button>
+    </section>
+
+    <section class="passo" id="passo-1">
+        <p>
+            Você começa sua jornada no Rio de Janeiro,
+            subindo o Pico da Tijuca ao amanhecer para
+            encontrar a primeira pista.
+        </p>
+
+        <button onclick="proximoPasso('passo-3')">
+            Procurar a pista no topo do pico
+        </button>
+
+        <button onclick="proximoPasso('passo-4')">
+            Desistir e voltar para casa
+        </button>
+    </section>
+
+    <section class="passo" id="passo-2">
+        <p>
+            Você chega a Pernambuco e encontra uma
+            mensagem misteriosa em uma praia.
+        </p>
+
+        <button onclick="proximoPasso('passo-5')">
+            Investigar a mensagem
+        </button>
+
+        <button onclick="proximoPasso('passo-4')">
+            Voltar para casa
+        </button>
+    </section>
+
+    <section class="passo" id="passo-3">
+        <p>
+            No topo do pico, você encontra uma caixa
+            escondida entre as pedras. Dentro dela existe
+            um mapa indicando o caminho para o Amazonas!
+        </p>
+
+        <button onclick="proximoPasso('passo-6')">
+            Seguir para o Amazonas
+        </button>
+    </section>
+
+    <section class="passo" id="passo-4">
+        <p>
+            Você desistiu da aventura e voltou para casa.
+            A cidade perdida continua sendo um mistério!
+        </p>
+
+        <button onclick="proximoPasso('passo-0')">
+            Recomeçar
+        </button>
+    </section>
+
+    <section class="passo" id="passo-5">
+        <p>
+            A mensagem encontrada na praia indica uma
+            passagem secreta para a floresta amazônica.
+        </p>
+
+        <button onclick="proximoPasso('passo-6')">
+            Seguir para o Amazonas
+        </button>
+    </section>
+
+    <section class="passo" id="passo-6">
+        <p>
+            Você chegou ao Amazonas! Agora precisa
+            escolher por onde continuar sua jornada.
+        </p>
+
+        <button onclick="proximoPasso('passo-7')">
+            Seguir pelo rio à esquerda
+        </button>
+
+        <button onclick="proximoPasso('passo-4')">
+            Voltar para casa
+        </button>
+    </section>
+
+    <section class="passo" id="passo-7">
+        <p>
+            Você encontrou uma trilha escondida entre
+            as árvores. Ao final dela, aparece uma cidade
+            antiga e misteriosa!
+        </p>
+
+        <button onclick="proximoPasso('passo-8')">
+            Explorar cidade perdida
+        </button>
+    </section>
+
+    <section class="passo" id="passo-8">
+        <h2>🎉 Parabéns! Você encontrou a cidade perdida!</h2>
+
+        <img
+            src="cenario-passo11-cidade-perdida.png"
+            alt="Cidade perdida escondida na floresta"
+        >
+
+        <p>
+            Depois de uma longa aventura, você encontrou
+            a cidade perdida! Ela está cheia de riquezas,
+            construções antigas e belezas naturais.
+        </p>
+
+        <button onclick="proximoPasso('passo-0')">
+            Jogar novamente
+        </button>
+    </section>
+
+</main>
+
+<script>
+
+    function proximoPasso(id) {
+
+        const atual = document.querySelector(".passo.ativo");
+
+        if (atual) {
+            atual.classList.remove("ativo");
+        }
+
+        const proximo = document.getElementById(id);
+
+        if (proximo) {
+            proximo.classList.add("ativo");
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
